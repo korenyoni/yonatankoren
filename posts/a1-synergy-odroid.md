@@ -21,11 +21,11 @@ Find the latest release of Synergy for armhf [here](http://ftp.debian.org/debian
 
 ###Why you can't dpkg -i then apt-get install -f
 
-If you `dpkg -i`, you will be further dissapointed because your Ubuntu 14.04 does not provide libssl-1.1. So there's no way to `dpkg -i` and then `apt-get install -f`.
+If you `dpkg -i`, you will be further dissapointed because your Ubuntu 14.04 does not provide libssl1.1. So there's no way to `dpkg -i` and then `apt-get install -f`.
 
-###Compiling OpenSSl 1.1.0 from source
+###Compiling OpenSSL 1.1.0 from source
 
-You need to get OpenSSl 1.1.0 without the help of any repository:
+You need to get OpenSSL 1.1.0 without the help of any repository:
 
 ```
 $ wget https://www.openssl.org/source/openssl-1.1.0.tar.gz
