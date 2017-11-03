@@ -43,7 +43,7 @@ $ sudo usermod -a -G docker $USER
 Download and run the container:
 
 ```
-$ docker run -i -t ubuntu:17.04 /bin/bash
+$ docker run --security-opt seccomp:unconfined -i -t ubuntu:17.04 /bin/bash
 ```
 
 If you exit, you can attach to it later:
@@ -63,8 +63,27 @@ Then,
 3. Install your dependenices
 4. Build
 
-Once you're done, you can exit the container and copy the binaries from the container to your machine:
+`cde` is a program which bundles all called libraries from your software into a package.
+
+Download it from [here](http://www.pgbovine.net/cde.html)
 
 ```
-$ docker cp 4d3f22cdabd5:/software/somepackage ~/software/somepackage
+cd /software/somepackage
+$ chmod +x cde
+./cde /software/somepackage/bin/somepackagebin
 ```
+
+Once you're done, you can exit the container and copy the cde package from the container to your machine:
+
+```
+$ docker cp 4d3f22cdabd5:/software/cde-package ~/software/somepackage-cde
+```
+
+Now you can run it:
+
+```
+$ cd ~/software/somepackage-cde/cde-root
+$ ../cde-exec software/somepackage/bin/somepackagebin
+```
+
+There you go!
