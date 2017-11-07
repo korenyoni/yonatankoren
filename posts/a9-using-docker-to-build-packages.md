@@ -20,7 +20,7 @@ Instead, we can use a docker container:
 
 ### You can use another release or another distro
 
-THe package manager of whatever releaes or distro you choose may already have the packages you need to build your binaries.
+The package manager of whatever releaes or distro you choose may already have the packages you need to build your binaries.
 
 ### You won't break your system
 
