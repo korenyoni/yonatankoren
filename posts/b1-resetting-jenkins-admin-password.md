@@ -43,13 +43,14 @@ If you need to reset the password without logging in, you can edit this file
 and replace the old hash with a new one generated from bcrypt:
 
 ```
-pip install bcrypt
-python
+$ pip install bcrypt
+$ python
 >>> import bcrypt
 >>> bcrypt.hashpw("yourpassword", bcrypt.gensalt(rounds=10, prefix=b"2a"))
+'YOUR_HASH'
 ```
 
-This will output your hash, with the correct prefix for jenins: 2a.
+This will output your hash, with the correct prefix for jenkins: 2a.
 
 Now, edit the config.xml:
 
