@@ -13,7 +13,7 @@ actually more complicated than the ideal situation.
 
 #A terrible, yet common idea:
 
-![Jenkins bad password reset](/images/Jenkins-password-reset-bad.png)
+![Jenkins bad password reset](/images/jenkins-password-reset-bad.png)
 
 When you leave your account open without a password, you're violating every
 security principle you can think of.
@@ -35,7 +35,7 @@ Don't ever do this.
 
 #A much better idea:
 
-![Jenkins good password reset](/images/Jenkins-password-reset-good.png)
+![Jenkins good password reset](/images/jenkins-password-reset-good.png)
 
 We can reset the password while leaving security on.
 
