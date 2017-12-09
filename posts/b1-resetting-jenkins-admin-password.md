@@ -12,4 +12,4 @@ then reset the password and re-enable security.
 
 #A terrible, yet common idea:
 
-![Jenkins bad password reset](images/jenkins-password-reset-bad.png)
+![Jenkins bad password reset](/images/jenkins-password-reset-bad.png)
