@@ -6,9 +6,10 @@ Status: public
 Toc: yes
 Position: 1
 
-So, you've locked yourself out of Jenkins. You may have seen some guides that involve
-that disable security for an account, then log into the account without a password,
-then resetting the password and re-enabling security.
+So, you've locked yourself out of Jenkins. You may have seen some guides which
+involve disabling security for an account, logging into the account without a password,
+then resetting the password and re-enabling security. While somewhat common, it is dangerous and
+actually more complicated than the ideal situation.
 
 #A terrible, yet common idea:
 
@@ -22,7 +23,7 @@ is unsecured is too short for an unauthorized entity to log in and do harm.
 You tell yourself that you are careful and reset the password as soon as possible,
 to keep this time window short.
 
-Now imagine that someone else on your team asks you how to reset the password,
+Now imagine that someone else on your team asks you how to reset the password
 and you show them this technique. Now what if this person disables security
 then goes off to lunch? Or goes home? Now the system is unsecured for an indefinite
 amount of time.
@@ -35,6 +36,8 @@ Don't ever do this.
 #A much better idea:
 
 ![Jenkins good password reset](/images/Jenkins-password-reset-good.png)
+
+We can reset the password while leaving security on.
 
 The `config.xml` file in `/var/lib/Jenkins/users/admin/` acts sort of like
 the `/etc/shadow` file Linux or UNIX-like systems or the SAM file in Windows, in the sense that it stores
