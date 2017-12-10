@@ -73,3 +73,5 @@ sudo systemctl restart Jenkins
 ```
 
 You can now log in, and you didn't leave your system open for a second.
+
+credit: [this post](https://unix.stackexchange.com/a/308024), although the bcrypt prefix had to be changed for Jenkins.
