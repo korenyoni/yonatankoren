@@ -75,6 +75,6 @@ sudo systemctl restart Jenkins
 You can now log in, and you didn't leave your system open for a second.
 
 ###References
-* [general idea](https://www.linkedin.com/pulse/devops-jenkins-ci-cd-how-reset-admin-password-yogesh-mehta/) --Not enough details.
-* [bcrypt command line use](https://unix.stackexchange.com/a/308024) --The bcrypt prefix had to be changed for Jenkins.
+* [General idea](https://www.linkedin.com/pulse/devops-jenkins-ci-cd-how-reset-admin-password-yogesh-mehta/) --Not enough details.
+* [Bcrypt command line use](https://unix.stackexchange.com/a/308024) --The bcrypt prefix had to be changed for Jenkins.
 * [The bad approach](https://gist.github.com/gmhawash/4043232)
