@@ -1,6 +1,6 @@
 Date: 2017-12-10
 Title: Adding Sensu to your infrastructure
-intro: Using Ansible.
+intro: Using Ansible
 Tags: Sensu Ansible Terraform Jenkins
 Status: public
 Toc: yes
