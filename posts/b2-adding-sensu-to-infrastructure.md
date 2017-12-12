@@ -6,27 +6,27 @@ Status: public
 Toc: yes
 Position: 1
 
-Sensu is an application which is used to monitor infrastructure,
-using recurring checks, registering events if something bad happens
+Sensu is an application used to monitor infrastructure,
+using recurring checks and registering events if something bad happens
 or some criteria is met.
 
 Not surprisingly, Ansible has a [role](https://github.com/sensu/sensu-ansible) which deploys a full Sensu stack
 to the inventory (the infrastructure).
 
-I had a couple issues with this role. First, `Uchiwa` --the console for Sensu-- was not running behind SSL.
+I had a couple issues with this role. First, `Uchiwa` --the web interface for Sensu-- was not running behind SSL.
 Second, I want my infrastructure to look like this:
 
 ![Sensu Jenkins Ansible Terraform Infrastructure](/images/sensu-infrastructure.png)
 
 * The master node:
-    * runs Terraform and provisions the rest of the infrastructure
-    * runs Jenkins to automate the provisioning tasks
+    * uses Terraform and provisions the rest of the infrastructure
+    * uses Jenkins to automate the provisioning tasks
     * acts as the Sensu master node to initiate Jenkins projects, i.e.
-scale up horizontally if Sensu checks show high cpu usage / network traffic
+scaling up the infrastructure horizontally if Sensu checks show high cpu usage / network traffic
     * Manages the state of all nodes using Ansible
 
 The Sensu Ansible role shares variables between the master node
-and the clients, and so the master deploys the role on itself.
+and the clients, and so the master deploys the role onto itself.
 
 In order to fix the issue with `Uchiwa` and SSL, I had to [fork the role](https://github.com/yonkornilov/sensu-ansible)
 and edit the deployable templates for the Uchiwa config.
@@ -41,7 +41,7 @@ $ ansible-galaxy install git+https://github.com/yonkornilov/sensu-ansible.git
 
 Next, I created a playbook for the localhost i.e. master node:
 
-(Note that yourdomain.com points to your localhost)
+(Assume that yourdomain.com points to your localhost)
 
 ```
   - hosts: 127.0.0.1 
@@ -100,11 +100,11 @@ Next, I created a playbook for the localhost i.e. master node:
     become: true
 ```
 
-There a few things we do in this playbook:
+There a few things in this playbook:
 
 * We add localhost (127.0.0.1) to the `sensu_master`, `redis` and `rabbitmq` groups in the inventory in order for the Sensu config
 * We generate the self-signed SSL key and certificate non-interactively, and without having to enter a password
-* We point redis to 0.0.0.0, so the port can be reached by other nodes in the infrastructure (Security must be strengthened in production)
+* We point redis to 0.0.0.0, so the port can be reached by other nodes in the infrastructure (but security must be strengthened in production)
 * We make the API and portal password-protected
 
 ###The Sensu Client Playbook
@@ -131,6 +131,9 @@ For the client nodes, I made this playbook:
     roles:
       - role: sensu-ansible
       - role: geerlingguy.ruby
+    vars:
+      - sensu_remote_plugins:
+        - sensu-plugins-cpu-checks
     tasks:
       - command: /etc/init.d/sensu-client restart
     become: True
@@ -183,13 +186,17 @@ Register these as clients:
 $ ansible-playbook --inventory-file=./terraform-inventory deploy/sensu_client.yml
 ```
 
-Scale up:
+We can see Sensu in action:
+
+![Uchiwa dashboard with cpu check](/images/uchiwa.png)
+
+Now we can scale up:
 
 ```
 $ terraform apply -var=worker_count=4
 ```
 
-Register new clients:
+Fiannly, we register the new clients:
 
 ```
 $ ansible-playbook --inventory-file=./terraform-inventory deploy/sensu_client.yml
