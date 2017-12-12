@@ -174,19 +174,19 @@ Deploy the stack on the localhost:
 $ ansible-playbook deploy/sensu_master.yml -i localhost
 ```
 
-Provision some servers:
+We provision a server:
 
 ```
 $ terraform apply -var=worker_count=1
 ```
 
-Register these as clients:
+Then register this client:
 
 ```
 $ ansible-playbook --inventory-file=./terraform-inventory deploy/sensu_client.yml
 ```
 
-We can see Sensu in action:
+We can see Sensu in action on `https://yourdomain.com:3000`
 
 ![Uchiwa dashboard with cpu check](/images/uchiwa.png)
 
@@ -207,3 +207,7 @@ $ ansible-playbook --inventory-file=./terraform-inventory deploy/sensu_client.ym
 The only thing we're missing is the Jenkins pipeline to automate scaling when
 Sensu checks are critical. We can achieve this by initiating the pipeline
 using the RabbitMQ event queue, but this will be done in the following post.
+
+# References
+
+* [Self-signed SSL certificate non-interactive](https://superuser.com/a/226229)
