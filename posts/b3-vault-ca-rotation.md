@@ -58,7 +58,7 @@ $ openssl x509 -checkend 7140 -noout -in file.crt
 
 ## Renewing a Vault token before expiry
 
-We use the Salt vault-token beacon to check the token expiry very hour.
+We use the Salt vault-token beacon to check the token expiry every hour.
 If the token expires within the next 1:59, we renew it with an increment of 30 days, minus an hour:
 
 ```
