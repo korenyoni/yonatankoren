@@ -31,7 +31,7 @@ rm token-key
 
 ## Control Loop:
 
-[!Vault ca rotation](/images/cert-rotation.png)
+![Vault ca rotation](/images/cert-rotation.png)
 
 Each machine is polled every hour for its token expiry and certificate expiry.
 
