@@ -32,6 +32,14 @@ rm token-key
 8. Provide each machine with a token for its respective role
     * Note: tokens are by default renewable in Vault
 
+## Putting Vault into etcd
+
+Because we want to use the etcd backend in vault to store vault data in etcd, we need start etcd and then the vault server with the etcd backend.
+However, we need the vault-generated certificate to start etcd, therefore we are left with a chicken and egg problem.
+
+We have the option of using a different way to issue certificates to etcd, for example cfssl. We also have the option of keeping etcd unsecured while
+the cluster does not accept any traffic.
+
 ## Control Loop:
 
 ![Vault ca rotation](/images/cert-rotation.png)
@@ -96,3 +104,5 @@ $ curl \
 # References:
 * [DigitalOcean: Kubernetes certificates using Vault](https://blog.digitalocean.com/vault-and-kubernetes/)
 * Vault docs
+* [Securing etcd clusters](https://continuously.me/2016/09/10/vault-secure-etcd-k8s/)
+* [Enabling HTTPS in an existing etcd cluster](https://continuously.me/2016/09/10/vault-secure-etcd-k8s/)
