@@ -1,9 +1,12 @@
 # Vault certificate rotation for Kubernetes
 
+The kubernetes components should not be able to communicate directly with the etcd servers. The k8s components can communicate with each other, but the k8s apiserver acts as a bridge between etcd and the k8s components.
+Therefore we create a CA for etcd and a CA for the K8s components.
+
 ## Bootstrap K8s/Etcd certificates:
 
 1. Create CA for etcd
-2. Create CA for K8s
+2. Create CA for K8s components
 
 3. Create roles for etcd:
     * etcd
@@ -27,7 +30,7 @@ rm token-key
 7. Create policy for kube-apiserver to generate new intermediate certificates in vault and read the k8s service account key
 
 8. Provide each machine with a token for its respective role
-    * Note: Tokens are by default renewable in Vault
+    * Note: tokens are by default renewable in Vault
 
 ## Control Loop:
 
