@@ -31,6 +31,8 @@ rm token-key
 
 ## Control Loop:
 
+[!Vault ca rotation](/images/vault-ca-rotation.png)
+
 Each machine is polled every hour for its token expiry and certificate expiry.
 
 ## Token expiry beacon and certificate expiry beacon
@@ -89,5 +91,5 @@ $ curl \
 ```
 
 # References:
-* [https://blog.digitalocean.com/vault-and-kubernetes/](DigitalOcean: Kubernetes certificates using Vault)
+* [https://blog.digitalocean.com/vault-and-kubernetes/](DigitalOcean - Kubernetes certificates using Vault)
 * Vault docs
