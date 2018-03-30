@@ -1,3 +1,3 @@
-# yonatankoren.com posts
+# yonatankoren.com
 
-Posts for the yonatankoren.com system administration, devops and programming blog.
+Personal Operations/Programming/Art blog.
