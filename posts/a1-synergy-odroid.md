@@ -1,10 +1,6 @@
 Date: 2017-10-9
 Title: Installing Synergy on Odroid
-intro: Latest Synergy on Ubuntu 14.04 / Armhf
-Tags: odroid armhf synergy
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 If you install synergy via apt-get:
 

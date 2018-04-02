@@ -1,10 +1,6 @@
 Date: 2017-10-11
 Title: Mobile viewport recipe
-intro: Two quick starting tips
-Tags: html css mobile web
-Status: public
-Toc: yes
-Position: 1
+cat: dev
 
 If your mobile css is not sizing divs properly, try these two quick things:
 

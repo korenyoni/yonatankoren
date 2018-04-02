@@ -1,10 +1,6 @@
 Date: 2017-10-07
 Title: Creating modular READMEs
-intro: Workarounds when modularity isn't normally possible
-Tags: readme github bash
-Status: public
-Toc: yes
-Position: 1
+cat: dev
 
 Github doesn't allow you to use include directives (reuse snippets of .md or .rst in a file without copy-paste):
 

@@ -1,10 +1,6 @@
 Date: 2017-09-14
 Title: Switching to lzop for fast decompression
-intro: Sometimes you need speed over compression
-Tags: decompression
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 When I provision my instances, I need to download an archive of a translation engine and extract it. Some options that I've tried:
 

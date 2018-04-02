@@ -1,0 +1,6 @@
+[submodule "php-markdown"]
+	path = php-markdown
+	url = https://github.com/michelf/php-markdown
+[submodule "github-markdown-css"]
+	path = github-markdown-css
+	url = https://github.com/sindresorhus/github-markdown-css

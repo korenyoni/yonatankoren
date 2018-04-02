@@ -1,10 +1,6 @@
 Date: 2015-09-30
 Title: Emacs, CIDER, and clojure-pretty-lambda-mode
-intro: Why use emacs, the wonders of an emacs environment for Clojure and how I spent way too much time porting prettylambdada.el for Clojure
-Tags: programming Clojure plugins editor
-Status: public
-Toc: yes
-Position: 1
+cat: dev
 
 #Emacs
 

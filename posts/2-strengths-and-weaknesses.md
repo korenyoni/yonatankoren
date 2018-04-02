@@ -1,10 +1,6 @@
 Date: 2015-08-24
 Title: Strengths and Weaknesses
-intro: A humbling post which may help you love some traits you didn't know were strengths.
-Tags: philosophy
-Status: public
-Toc: yes
-Position: 1
+cat: art
 
 ##My School Experience
 Throughout my schooling experience, I was never the type of kid to consistently do my homework.
