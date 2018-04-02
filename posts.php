@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/php-markdown/Michelf/Markdown.inc.php';
+require_once __DIR__ . '/parsedown/Parsedown.php';
 $post_id = $_GET['id'];
 
 $file_text = file_get_contents(__DIR__ . '/posts/' . $post_id);
@@ -8,7 +8,8 @@ preg_match($title_regex,$file_text,$title_line_matches);
 $title = preg_replace("/Title:/", '', $title_line_matches[0]);
 $title = trim($title);
 $file_text = preg_replace("/Date:.*\nTitle:.*\ncat:.*\n/",'',$file_text);
-$html = Michelf\Markdown::defaultTransform($file_text);
+$Parsedown = new Parsedown();
+$html = $Parsedown->text($file_text);
 
 echo <<<HTML
      <head>

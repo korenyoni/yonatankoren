@@ -4,3 +4,6 @@
 [submodule "github-markdown-css"]
 	path = github-markdown-css
 	url = https://github.com/sindresorhus/github-markdown-css
+[submodule "parsedown"]
+	path = parsedown
+	url = https://github.com/erusev/parsedown
