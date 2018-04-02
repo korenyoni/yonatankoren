@@ -1,4 +1,4 @@
-Date: 2017-12-10
+Date: 2018-01-01
 Title: Vault certificate rotation for Kubernetes
 cat: ops
 
@@ -7,19 +7,19 @@ Therefore we create a CA for etcd and a CA for the K8s components.
 
 ## Bootstrap K8s/Etcd certificates:
 
-1. Create CA for etcd
-2. Create CA for K8s components
+1.  Create CA for etcd
+2.  Create CA for K8s components
 
-3. Create roles for etcd:
+3.  Create roles for etcd:
     * etcd
 
-4. Create roles for K8s components
+4.  Create roles for K8s components
     * kubelet
     * kube-scheduler
     * kube-controller-manager
     * kubectl
 
-5. Create service account key for K8s components:
+5.  Create service account key for K8s components:
 
 ```
 openssl genrsa 4096 > token-key
@@ -27,11 +27,11 @@ vault write secret/$CLUSTER_ID/k8s/token key=@token-key
 rm token-key
 ```
 
-6. Create policy for etcd-members to generate new intermediate certs in vault
+6.  Create policy for etcd-members to generate new intermediate certs in vault
 
-7. Create policy for kube-apiserver to generate new intermediate certificates in vault and read the k8s service account key
+7.  Create policy for kube-apiserver to generate new intermediate certificates in vault and read the k8s service account key
 
-8. Provide each machine with a token for its respective role
+8.  Provide each machine with a token for its respective role
     * Note: tokens are by default renewable in Vault
 
 ## Putting Vault into etcd
