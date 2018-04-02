@@ -1,10 +1,6 @@
 Date: 2017-09-07
 Title: Why use Terraform and Ansible
-intro: Why Terraform and Ansible make elastic cloud computing simple
-Tags: programming cloud-computing devops
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 ####Terraform
 

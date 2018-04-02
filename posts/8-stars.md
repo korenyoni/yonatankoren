@@ -1,10 +1,6 @@
 Date: 2017-10-07
 Title: One thousand stars
-intro: I want
-Tags: poetry github
-Status: public
-Toc: yes
-Position: 1
+cat: art
 
 I want a repo with a thousand stars,  
 a thousand and for each one, twenty  

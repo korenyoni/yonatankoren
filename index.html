@@ -21,6 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/blog.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -28,26 +29,87 @@
 
 </head>
 <script src="js/jquery-3.3.1.js"></script>
+<script>
+function hide_except(category) {
+    $.each(["ops","dev","art"], function(index, value) {
+        if (category != value) {
+            $("#" + value).hide("fast");
+        }
+    });
+}
+function insert(category, post) {
+   var categoryId = "";
+   if (category == "ops") categoryId =  "#ops";
+   if (category == "dev") categoryId =  "#dev";
+   if (category == "art") categoryId =  "#art";
+   $(categoryId).append('<div id="post' + post["index"] + '" class="button card twelve columns">' +
+      '<div class="twelve columns"><h4>' + post["title"] + '</h4><div>' +
+      '<div class="twelve columns">' + post["date"] + '</div>' +
+      '</div>');
+   $("#post" + post["index"]).on('click', function() {
+      window.location = "posts.php?id=" + post["id"];
+   });
+}
+function get_files(){
+    $.ajax({
+               type: "GET",
+               url: "/posts_list.php",
+               cache: false,
+               success: function(result){
+                   jsonRes = $.parseJSON(result)
+                   console.log(jsonRes);
+                   $.each(jsonRes["ops"], function(index, value) {
+                      insert("ops",value);
+                   });
+                   $.each(jsonRes["dev"], function(index, value) {
+                      insert("dev",value);
+                   });
+                   $.each(jsonRes["art"], function(index, value) {
+                      insert("art",value);
+                   });
+               }
+          });
+}
+$(document).ready(function() {
+    get_files();
+    $("#opsSubmit").on('click',function(){
+        hide_except("ops");
+        $("#backButton").hide("fast");
+        $("#ops").show("fast");
+    });
+    $("#devSubmit").on('click',function(){
+        hide_except("dev");
+        $("#backButton").hide("fast");
+        $("#dev").show("fast");
+    });
+    $("#artSubmit").on('click',function(){
+        hide_except("art");
+        $("#backButton").hide("fast");
+        $("#art").show("fast");
+    });
+    $('#ops').show();
+    $( "#header" ).load( "header.html" );
+    $( "#footer" ).load( "footer.php" );
+});
+</script>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-      <div class="six columns" style="margin-top: 25%; text-align: center">
-        <h2>Yonathan Koren</h2>
-        <h6><a href="https://github.com/yonkornilov/">https://github.com/yonkornilov/</a></h6>
-        <button>Operations</button>
-        <button>Programming</button>
-        <button>Art</button>
+      <div id="header"></div>
+      <div class="twelve columns" style="text-align: center">
+        <button id="opsSubmit">Operations</button>
+        <button id="devSubmit">Programming</button>
+        <button id="artSubmit">Art</button>
       </div>
-      <div class="six columns" style="margin-top: 25%">
-        <div class="twelve columns">
-            <div class="row" style="margin-bottom:5%">
-                <h4>Adding sensu to your infrastructure</h4>
-                <h5>December 20th 2017</h5>
-           </div>
-           <div class="row" style="margin-bottom:5%">
-                <h4>Another example to try out width</h4>
-                <h5>December 20th 2017</h5>
-           </div>
+      <div class="twelve columns" style="margin-top: 5%">
+        <button id="backButton" style="display:none">Back</button>
+        <div id="ops" class="twelve columns" style="display:none">
+        </div>
+        <div id="dev" class="twelve columns" style="display:none">
+        </div>
+        <div id="art" class="twelve columns" style="display:none">
+        </div>
+        <div id="footer">
         </div>
    </div>
 

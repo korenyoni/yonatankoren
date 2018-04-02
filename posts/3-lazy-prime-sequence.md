@@ -1,10 +1,6 @@
 Date: 2015-09-07
 Title: Lazy Prime Sequence in Clojure
-intro: How I spent some time understanding lazy sequences and how to make an incremental sieve of Eratosthenes
-Tags: programming Clojure mathematics
-Status: public
-Toc: yes
-Position: 1
+cat: dev
 
 ##My curiosity on the Incremental Sieve
 For a long time I've been aware of the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). I've also implemented the [Sieve of Atkin](https://en.wikipedia.org/wiki/Sieve_of_Atkin) in C++ (although I admit, I have not read the paper

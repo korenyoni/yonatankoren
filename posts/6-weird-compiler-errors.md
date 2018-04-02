@@ -1,10 +1,6 @@
 Date: 2017-09-10
 Title: Weird compiler errors
-intro: Sometimes it's a hardware problem
-Tags: programming g++ maven
-Status: public
-Toc: yes
-Position: 1
+cat: ops,dev
 
 The other day I ran into a compiler error which did not come with any explanation:
 
