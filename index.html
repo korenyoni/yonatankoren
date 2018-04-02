@@ -47,7 +47,7 @@ function insert(category, post) {
       '<div class="twelve columns">' + post["date"] + '</div>' +
       '</div>');
    $("#post" + post["index"]).on('click', function() {
-      window.location = "posts.php?id=" + post["id"];
+      window.location = "post/" + post["id"];
    });
 }
 function get_files(){
