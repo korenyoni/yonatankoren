@@ -1,10 +1,6 @@
 Date: 2017-10-11
 Title: Jenkins pipelines with Terraform and Ansible
-intro: Workloads in the cloud
-Tags: jenkins cloud-computing terraform ansible
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 You can create powerful pipelines in the cloud using Jenkins, Terraform and Ansible.
 

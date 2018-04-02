@@ -2,8 +2,6 @@ Date: 2017-12-10
 Title: Vault certificate rotation for Kubernetes
 cat: ops
 
-# Vault certificate rotation for Kubernetes
-
 The kubernetes components should not be able to communicate directly with the etcd servers. The k8s components can communicate with each other, but the k8s apiserver acts as a bridge between etcd and the k8s components.
 Therefore we create a CA for etcd and a CA for the K8s components.
 

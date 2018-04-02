@@ -1,5 +1,5 @@
 Date: 2017-09-07
-Title: Why use Terraform and Ansible
+Title: Why to use Terraform and Ansible
 cat: ops
 
 ####Terraform

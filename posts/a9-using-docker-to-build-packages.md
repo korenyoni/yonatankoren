@@ -1,10 +1,6 @@
 Date: 2017-10-29
 Title: Using Docker to build packages
-intro: And not messing up your system
-Tags: docker packages make
-Status: public
-Toc: yes
-Position: 1
+cat: dev,ops
 
 Have you ever really wanted to build some software?
 

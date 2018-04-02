@@ -1,10 +1,6 @@
 Date: 2017-10-24
 Title: Swapping the Chromebook search button
-intro: If you like swapping caps with escape, but your chromebook doesn't have a capslock
-Tags: xkb ubuntu chromebook
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 A very common configuration for programmers, especially among those who use Vim-keybindings, is the swappin of CapsLock and Escape:
 

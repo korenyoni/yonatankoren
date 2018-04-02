@@ -1,10 +1,6 @@
 Date: 2017-12-10
 Title: Adding Sensu to your infrastructure
-intro: Using Ansible
-Tags: Sensu Ansible Terraform Jenkins
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 Sensu is an application used to monitor infrastructure,
 using recurring checks and registering events if something bad happens
