@@ -1,10 +1,6 @@
 Date: 2017-12-09
 Title: Resetting the Jenkins admin password
-intro: While keeping security running
-Tags: Jenkins security linux
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 So, you've locked yourself out of Jenkins. You may have seen some guides which
 involve disabling security for an account, logging into the account without a password,

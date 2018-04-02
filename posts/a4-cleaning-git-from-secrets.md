@@ -1,10 +1,6 @@
 Date: 2017-10-12
 Title: Removing secrets from a git repository
-intro: You removed your passwords, but they're still retrievable
-Tags: git security
-Status: public
-Toc: yes
-Position: 1
+cat: dev
 
 So, you just realized your git repository had some sensitive information, i.e. passwords, private keys at some point in its lifetime.
 

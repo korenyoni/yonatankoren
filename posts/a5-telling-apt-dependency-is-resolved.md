@@ -1,10 +1,6 @@
 Date: 2017-10-16
 Title: Telling apt a dependency is resolved
-intro: Unbreaking apt
-Tags: apt ubuntu system-administration sysadmin
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 In some cases you may install a package outside your package manager (e.g. using `dpkg -i` in Ubuntu), and this package may have dependencies unavailable to your system.
 

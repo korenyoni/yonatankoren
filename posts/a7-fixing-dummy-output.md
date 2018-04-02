@@ -1,10 +1,6 @@
 Date: 2017-10-25
 Title: Fixing only dummy output showing
-intro: Sound doesn't work, only dummy output shows
-Tags: sound linux alsa pulseaudio
-Status: public
-Toc: yes
-Position: 1
+cat: ops
 
 Sometimes you may lose sound on your linux machine after installing a package.
 

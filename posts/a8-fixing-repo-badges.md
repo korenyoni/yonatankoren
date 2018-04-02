@@ -1,10 +1,6 @@
 Date: 2017-10-29
 Title: Fixing repo badges
-intro: Sometimes your badges might be out of sync with the badge cache
-Tags: github repo badges
-Status: public
-Toc: yes
-Position: 1
+cat: dev
 
 So you have a public repo. You're happy with your code coverage, your test status, and your documentation status, but one or more badges is telling people something is wrong:
 
