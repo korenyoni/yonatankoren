@@ -23,20 +23,20 @@ echo <<<HTML
 
       <!-- CSS
       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-      <link rel="stylesheet" href="css/normalize.css">
-      <link rel="stylesheet" href="css/skeleton.css">
-      <link rel="stylesheet" href="css/blog.css">
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="/css/skeleton.css">
+      <link rel="stylesheet" href="/css/blog.css">
 
       <!-- Favicon
       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-      <link rel="icon" type="image/png" href="images/favicon.png">
-      <script src="js/jquery-3.3.1.js"></script>
+      <link rel="icon" type="image/png" href="/images/favicon.png">
+      <script src="/js/jquery-3.3.1.js"></script>
       <script>
       $(document).ready(function(){
-        $( "#header" ).load( "header.html" );
-        $( "#footer" ).load( "footer.php" );
+        $( "#header" ).load( "/header.html" );
+        $( "#footer" ).load( "/footer.php" );
         $( "#homeSubmit" ).on('click', function() {
-          window.location = "index.html";
+          window.location = "/index.html";
         });
       });
       </script>
