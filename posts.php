@@ -2,7 +2,7 @@
 require_once __DIR__ . '/parsedown/Parsedown.php';
 $post_id = $_GET['id'];
 
-$file_text = file_get_contents(__DIR__ . '/posts/' . $post_id);
+$file_text = file_get_contents(__DIR__ . '/posts/' . $post_id . '.md');
 $title_regex = "/Title:.*\n/";
 preg_match($title_regex,$file_text,$title_line_matches);
 $title = preg_replace("/Title:/", '', $title_line_matches[0]);

@@ -33,7 +33,7 @@ foreach ($a as &$file) {
             $post->date = $date;
             $post->title = $title;
             $post->cat = $c;
-            $post->id = $file;
+            $post->id = pathinfo($file)["filename"];
             $post->index = $i;
             if ($c == "ops") {
                 array_unshift($ops, $post);
