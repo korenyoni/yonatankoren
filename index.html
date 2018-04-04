@@ -42,11 +42,11 @@ function insert(category, post) {
    if (category == "ops") categoryId =  "#ops";
    if (category == "dev") categoryId =  "#dev";
    if (category == "art") categoryId =  "#art";
-   $(categoryId).append('<div id="post' + post["index"] + '" class="button card twelve columns">' +
+   $(categoryId).append('<div class="post' + post["index"] + ' button card twelve columns">' +
       '<div class="twelve columns"><h4>' + post["title"] + '</h4><div>' +
       '<div class="twelve columns">' + post["date"] + '</div>' +
       '</div>');
-   $("#post" + post["index"]).on('click', function() {
+   $(".post" + post["index"]).on('click', function() {
       window.location = "post/" + post["id"];
    });
 }
