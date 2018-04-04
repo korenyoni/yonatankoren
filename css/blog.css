@@ -14,6 +14,14 @@ img {
     height: 100%;
     white-space: normal;
     text-transform: none;
+	-webkit-box-shadow: 5px 5px 24px 0px rgba(0,0,0,0.31);
+	-moz-box-shadow: 5px 5px 24px 0px rgba(0,0,0,0.31);
+	box-shadow: 5px 5px 24px 0px rgba(0,0,0,0.31);
+}
+button {
+	-webkit-box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.31);
+	-moz-box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.31);
+	box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.31);
 }
 .wrap_link {
     display: block;
