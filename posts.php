@@ -36,7 +36,7 @@ echo <<<HTML
         $( "#header" ).load( "/header.html" );
         $( "#footer" ).load( "/footer.php" );
         $( "#homeSubmit" ).on('click', function() {
-          window.location = "/index.html";
+          window.location = "/";
         });
       });
       </script>
