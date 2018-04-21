@@ -26,12 +26,10 @@ CLUSTER
 
 The issue is scaling the Redis instance. The Redis clustering mode named `Redis Cluster` requires an external
 program to connect the cluster nodes. This means a potential cluster requires constant administration on both
-cluster startup and upon a node dying --defeating the purpose of a kubernetes Deployment with multiple replicas
+cluster startup and upon a pod being recreated --defeating the purpose of a kubernetes Deployment of a redis cluster
 as a solution for single instance failure.
 
-A solution is to use Elasticache per-namespace. These Elasticache
-"clusters" are large enough that they won't fail as often as the pods, and furthermore since they are hosted,
-they provide some level of abstraction akin to pods:
+A solution is to use Elasticache per-namespace:
 
 ```
 CLUSTER
@@ -53,13 +51,21 @@ We will need to make use of Terraform interpolation in order to create a cluster
 First, let's look at the `namespaces` variable in the `main.tf` file of our cluster:
 
 ```
+module "kubernetes" {
+  ...
+  namespaces                = ["namespace_a,namespace_b"]
+  ...
+}
+
+...
+
 module "elasticache" {
   source = "../../modules/elasticache"
 
   zone                      = "${module.vpc.route53_zone}"
   cluster_name              = "${var.cluster_name}"
   cluster_short_code        = "${var.cluster_short_code}"
-  namespaces                = ["namespace_a,namespace_b"]
+  namespaces                = [${module.Kubernetes.namespaces}]
   allowed_security_group    = "${var.allowed_security_group}"
   private_subnets           = ["${module.vpc.private_subnets}"]
   node_groups               = "3"
@@ -67,7 +73,7 @@ module "elasticache" {
 }
 ```
 
-We supply our Elasticache module with the vpc, name of our cluster, and its namespaces. Now our Elasticache module
+We supply our Elasticache module with the vpc, name of our cluster, and the kubernetes namespaces. Now our Elasticache module
 has to iterate over each namespace and create the resources appropriately:
 
 ```
@@ -98,5 +104,5 @@ In particular, the `count` field iteration ensures we create each Elasticache cl
 with the number of elements in `namespaces`. We then use the `element`interpolation to reference the current
 namespace being iterated on, i.e. calling `element` on `namespaces` at the current `count.index`.
 
-This sort of referencing within the module ensures that should we destroy a namespace in the cluster,
-the module's resources for that namespace will also be destroyed.
+Using the high-level `namespaces` variable allows us to achieve a level of abstraction akin to deployments, in that
+we can have a hands-off assurance that each kubernetes namespace has a Redis connection.
