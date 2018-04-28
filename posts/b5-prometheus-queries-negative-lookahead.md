@@ -2,7 +2,7 @@ Date: 2018-04-27
 Title: Prometheus queries: negative lookahead
 cat: ops
 
-I've recently gotten stuck trying to use negative lookahead in Prometheus queries:
+I've recently gotten stuck trying to use negative lookahead in Prometheus queries with the `~=` regex matcher:
 
 ### This query doesn't work
 
