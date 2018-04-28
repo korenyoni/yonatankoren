@@ -14,7 +14,7 @@ In this example, we are trying to retrieve all sub-paths of `/api/v2` and `/api/
 However this is not possible in Prometheus since it uses the [re2](https://github.com/google/re2) library, which doesn't support
 negative lookahead.
 
-I was scratching my head for some time, but soon I realized Prometheus doesn't need negative-lookahead since it supports the `!~` matcher:
+I was scratching my head for some time, but soon I realized Prometheus doesn't need negative-lookahead since it supports the `!~` (negative regex) matcher:
 
 
 ### This query works
@@ -23,4 +23,4 @@ I was scratching my head for some time, but soon I realized Prometheus doesn't n
 sum by (code,path)(rate(http_server_requests_total{path=~"(/api/v2)(/api/v3).*", path!~"(/api/v1).*"}[5m])) * 60
 ```
 
-This way, we can get around [re2](https://github.com/google/re2)'s lack of negative lookahead.
+By using both Prometheus's positive `=~` and negative `!~` regex matchers, we can get around [re2](https://github.com/google/re2)'s lack of negative lookahead.
