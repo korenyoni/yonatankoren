@@ -1,5 +1,5 @@
 Date: 2018-05-06
-Title: In Darkness
+Title: In darkness
 cat: art
 
 I like to see things in the dark.
