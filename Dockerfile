@@ -1,6 +1,5 @@
 FROM trafex/alpine-nginx-php7:cf28926c
 
-CMD rm /var/www/html/*
 COPY css /var/www/html/css
 COPY images /var/www/html/images
 COPY js /var/www/html/js
