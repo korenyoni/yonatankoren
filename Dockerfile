@@ -1,4 +1,4 @@
-FROM nginx:1.14.0-alpine
+FROM trafex/alpine-nginx-php7:cf28926c
 COPY css /usr/share/nginx/html/css
 COPY images /usr/share/nginx/html/images
 COPY js /usr/share/nginx/html/js
