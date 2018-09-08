@@ -7,5 +7,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build Image 
+          name: Build Docker Image 
           command: docker build .
