@@ -6,3 +6,4 @@ COPY js /var/www/html/js
 COPY posts /var/www/html/posts
 COPY footer.php header.html index.html posts.php posts_list.php /var/www/html/
 RUN rm /var/www/html/index.php
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
